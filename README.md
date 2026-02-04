@@ -1,30 +1,37 @@
+Nice README already 👍
+We just need to **update it to match your new clean structure (frontend + ml_app)** and fix **local vs public demo wording** so it doesn’t confuse evaluators.
+
+Below is a **ready-to-paste UPDATED README.md** aligned with your **new setup**.
+
+---
+
 # 🌊 Underwater Debris Detection using YOLOv8
 
-A complete **AI-powered web application** for detecting underwater debris using **YOLO deep learning models**, integrated with a **modern web UI and live Gradio demo**.
+An **AI-powered web application** for detecting underwater debris using a **YOLOv8 deep learning model**, combined with a **modern frontend UI** and a **live Gradio demo hosted separately**.
 
 ---
 
 ## 🚀 Project Overview
 
-Marine pollution is a growing environmental concern. This project uses **computer vision and deep learning** to automatically detect underwater debris such as plastic, metal, and waste materials from underwater images and videos.
+Marine pollution is a serious environmental challenge. This project applies **computer vision and deep learning** to automatically detect underwater debris such as plastic, metal, and waste materials from images.
 
-The system combines:
+The system consists of:
 
 * **YOLOv8 Object Detection Model**
-* **Gradio-based ML interface**
-* **Interactive Web UI using HTML, CSS & Bootstrap**
-* **Real-time image inference**
+* **Gradio-based ML inference app**
+* **Responsive Web UI (HTML, CSS, JS, Bootstrap)**
+* **Live model inference via iframe integration**
 
 ---
 
 ## 🧠 Key Features
 
 * 🔍 Real-time underwater debris detection
-* ⚡ High-speed inference using YOLOv8
-* 🌐 Web-based user interface
-* 📸 Image upload & instant prediction
-* 📊 Model comparison visualization
-* 🖥 Integrated Gradio live demo
+* ⚡ Fast inference using YOLOv8
+* 🌐 Web-based interactive UI
+* 📸 Image upload and instant prediction
+* 🖥 Live Gradio demo integration
+* ☁ Public deployment using HuggingFace Spaces
 
 ---
 
@@ -47,30 +54,39 @@ The system combines:
 
 ---
 
-## 📂 Project Structure
+## 📂 Updated Project Structure
 
 ```
-project-root/
+Underwater-Debris-Detection-using-YOLO-model/
 │
-├── index.html
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── img/
+│       ├── ui1.png
+│       └── ui2.png
 │
 ├── ml_app/
 │   ├── app.py
 │   └── models/
 │       └── 60_epochs_denoised.pt
 │
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation & Setup (Local)
 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/underwater-debris-detection.git
-cd underwater-debris-detection
+git clone https://github.com/your-username/Underwater-Debris-Detection-using-YOLO-model.git
+cd Underwater-Debris-Detection-using-YOLO-model
 ```
 
 ---
@@ -98,16 +114,16 @@ pip install ultralytics gradio torch torchvision opencv-python roboflow
 
 ---
 
-## ▶️ How To Run
+## ▶️ Running the Project Locally
 
-### Step 1 — Start ML Server
+### Step 1 — Start the ML Application
 
 ```bash
 cd ml_app
 python app.py
 ```
 
-Gradio will run at:
+Gradio will start at:
 
 ```
 http://127.0.0.1:7860
@@ -115,32 +131,45 @@ http://127.0.0.1:7860
 
 ---
 
-### Step 2 — Open Web UI
+### Step 2 — Run the Frontend
 
-Open `index.html` in browser.
-
-Now scroll to **Live Demo section** — your Gradio UI will load inside iframe.
-
----
-
-## 🌐 Live Demo Integration
-
-Your website automatically loads the ML interface using:
-
-```html
-<iframe src="http://127.0.0.1:7860"></iframe>
+```bash
+cd frontend
+python -m http.server 5500
 ```
 
-This enables **real-time prediction directly inside the website UI**.
+Open in browser:
+
+```
+http://localhost:5500
+```
+
+The **Live Demo section** will display the Gradio interface via iframe.
 
 ---
 
-## 📊 Model Used
+## 🌐 Live Demo (Public Deployment)
+
+The trained YOLOv8 model is deployed using **HuggingFace Spaces**, and the frontend embeds it using an iframe.
+
+```html
+<iframe 
+  src="https://huggingface.co/spaces/SrushtiSatte/underwater_debris_detection_yolov8?embed=true"
+  width="100%"
+  height="600"
+></iframe>
+```
+
+This allows users to **try the model directly from the website without running it locally**.
+
+---
+
+## 📊 Model Details
 
 * YOLOv8 (Ultralytics)
-* Custom trained model
+* Custom-trained underwater debris dataset
 * Trained for **60 epochs**
-* Optimized for **underwater debris detection**
+* Optimized for underwater visibility challenges
 
 ---
 
@@ -149,35 +178,32 @@ This enables **real-time prediction directly inside the website UI**.
 * Marine cleanup automation
 * Underwater robotics
 * Ocean pollution monitoring
-* Environmental research
+* Environmental research & analysis
 
 ---
 
 ## 📸 Screenshots
 
-* Web UI
-* Model detection results
-* Gradio live interface
+### Web Interface
 
-![Web UI](img/ui1.png)
-![Gradio Live Demo](img/ui2.png)
+![Web UI](frontend/img/ui1.png)
+
+### Live Gradio Demo
+
+![Gradio Live Demo](frontend/img/ui2.png)
 
 ---
 
 ## 📜 License
 
-This project is for **educational and research purposes only**.
+This project is intended for **educational and research purposes only**.
 
 ---
 
 ## ⭐ Support
 
-If you like this project:
+If you find this project useful:
 
-* ⭐ Star this repo
-* 🍴 Fork it
-* 🧠 Learn & build more AI projects
-
----
-
-🔥 **Built with Passion for Clean Oceans & AI Innovation** 🌊🤖
+* ⭐ Star this repository
+* 🍴 Fork and experiment
+* 🤖 Build more AI-powered solutions
