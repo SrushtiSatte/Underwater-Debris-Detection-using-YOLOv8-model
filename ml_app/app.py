@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 from ultralytics import YOLO
 import cv2
@@ -19,4 +20,7 @@ demo = gr.Interface(
     description="Upload underwater images and detect marine debris using YOLOv8"
 )
 
-demo.launch(inbrowser=True, server_name="127.0.0.1", server_port=7860)
+if os.getenv("HF_SPACE") == "true":
+    demo.launch(server_name="0.0.0.0")
+else:
+    demo.launch(inbrowser=True)
