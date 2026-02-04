@@ -1,64 +1,182 @@
-# Underwater Debris Detection using YOLOv8 model
+# 🌊 Underwater Debris Detection using YOLOv8
 
-A small website and notebook demo for underwater debris detection using YOLOv8 and a Gradio UI.
+A complete **AI-powered web application** for detecting underwater debris using **YOLO deep learning models**, integrated with a **modern web UI and live Gradio demo**.
 
-This repository includes:
+---
 
-- A static website (`index.html`) with a Live Demo iframe that can show a locally-run Gradio app.
-- A notebook `Train_Underwater_Waste_Detection_YoloV8 (3).ipynb` that contains data download, training, inference, a notebook Gradio demo, and a simple Flask endpoint for programmatic use.
-- A lightweight YOLOv8 model (`yolov8n.pt`) for quick testing.
+## 🚀 Project Overview
 
-Quick setup (Windows)
+Marine pollution is a growing environmental concern. This project uses **computer vision and deep learning** to automatically detect underwater debris such as plastic, metal, and waste materials from underwater images and videos.
 
-1. Open PowerShell in the project root.
-2. Create & activate a virtual environment (recommended):
-   ```powershell
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ```
-3. Install required packages:
-   ```powershell
-   pip install gradio ultralytics pillow numpy flask flask-cors
-   ```
+The system combines:
 
-Run the Gradio demo (recommended)
+* **YOLOv8 Object Detection Model**
+* **Gradio-based ML interface**
+* **Interactive Web UI using HTML, CSS & Bootstrap**
+* **Real-time image inference**
 
-- Notebook (recommended for first run):
-  1. Open `Train_Underwater_Waste_Detection_YoloV8 (3).ipynb` in Jupyter or VS Code.
-  2. Run the cell that prints `Found candidate .pt files...` (this sets `model_path`).
-  3. Run the cell titled **Launch an in-notebook Gradio demo**. It will try ports 7860–7862 and open the UI in your browser automatically.
+---
 
-- Outside the notebook (optional):
-  If you prefer a script-based launcher, create a small script to import the same `iface` and call `iface.launch(server_name='127.0.0.1', server_port=7860, inbrowser=True)`.
+## 🧠 Key Features
 
-Using your own trained model
+* 🔍 Real-time underwater debris detection
+* ⚡ High-speed inference using YOLOv8
+* 🌐 Web-based user interface
+* 📸 Image upload & instant prediction
+* 📊 Model comparison visualization
+* 🖥 Integrated Gradio live demo
 
-- Place your `.pt` file in the repository (e.g., project root or a `models/` folder).
-- Re-run the cell that auto-detects `.pt` files; the notebook will select the most recent `.pt` and use it for inference.
+---
 
-Flask endpoint (programmatic access)
+## 🛠 Tech Stack
 
-- The notebook contains a Flask app exposing `POST /process-image` which accepts a form file named `image` and returns a processed PNG.
-- To test locally (after running the Flask cell):
-  ```powershell
-  curl -F "image=@path\to\image.jpg" http://127.0.0.1:5500/process-image -o result.png
-  ```
+### Machine Learning
 
-Colab and Roboflow notes
+* Python
+* YOLOv8 (Ultralytics)
+* PyTorch
+* OpenCV
+* Gradio
 
-- Cells that mount Google Drive are guarded so they won't fail on Windows; run them when using Google Colab.
-- `roboflow.login()` requires an API key and network access—provide credentials in Colab or set env vars locally if you use Roboflow.
+### Frontend
 
-Troubleshooting
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
 
-- Ports in use: If `7860` or `5500` are in use, change the port when launching or stop the conflicting process.
-- Browser not opening: open `http://127.0.0.1:7860` manually; the notebook also embeds an iframe when the server starts.
-- Model load errors: ensure the `.pt` file is present and compatible with the installed `ultralytics` version.
+---
 
-Contributing
+## 📂 Project Structure
 
-Contributions are welcome: add tests, training scripts, or a `run_gradio.py` and `flask_app.py` for a cleaner standalone run.
+```
+project-root/
+│
+├── index.html
+│
+├── ml_app/
+│   ├── app.py
+│   └── models/
+│       └── 60_epochs_denoised.pt
+│
+└── requirements.txt
+```
 
-License
+---
 
-This project is provided as-is for educational/demo purposes.
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/underwater-debris-detection.git
+cd underwater-debris-detection
+```
+
+---
+
+### 2️⃣ Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+OR manually:
+
+```bash
+pip install ultralytics gradio torch torchvision opencv-python roboflow
+```
+
+---
+
+## ▶️ How To Run
+
+### Step 1 — Start ML Server
+
+```bash
+cd ml_app
+python app.py
+```
+
+Gradio will run at:
+
+```
+http://127.0.0.1:7860
+```
+
+---
+
+### Step 2 — Open Web UI
+
+Open `index.html` in browser.
+
+Now scroll to **Live Demo section** — your Gradio UI will load inside iframe.
+
+---
+
+## 🌐 Live Demo Integration
+
+Your website automatically loads the ML interface using:
+
+```html
+<iframe src="http://127.0.0.1:7860"></iframe>
+```
+
+This enables **real-time prediction directly inside the website UI**.
+
+---
+
+## 📊 Model Used
+
+* YOLOv8 (Ultralytics)
+* Custom trained model
+* Trained for **60 epochs**
+* Optimized for **underwater debris detection**
+
+---
+
+## 🧪 Use Cases
+
+* Marine cleanup automation
+* Underwater robotics
+* Ocean pollution monitoring
+* Environmental research
+
+---
+
+## 📸 Screenshots
+
+* Web UI
+* Model detection results
+* Gradio live interface
+
+![alt text]({73BAE810-ECB6-41E5-9C99-9835F0E91C9D}.png)
+![alt text]({45B03402-0390-4D12-B2B7-78A9872182FC}.png)
+---
+
+## 📜 License
+
+This project is for **educational and research purposes only**.
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star this repo
+* 🍴 Fork it
+* 🧠 Learn & build more AI projects
+
+---
+
+🔥 **Built with Passion for Clean Oceans & AI Innovation** 🌊🤖

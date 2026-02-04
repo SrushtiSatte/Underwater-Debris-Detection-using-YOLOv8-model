@@ -1,0 +1,10 @@
+ultralytics
+gradio
+roboflow
+torch
+torchvision
+opencv-python
+numpy
+flask
+flask-cors
+python-multipart
