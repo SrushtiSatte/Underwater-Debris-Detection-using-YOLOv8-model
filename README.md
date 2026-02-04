@@ -1,10 +1,3 @@
-Nice README already 👍
-We just need to **update it to match your new clean structure (frontend + ml_app)** and fix **local vs public demo wording** so it doesn’t confuse evaluators.
-
-Below is a **ready-to-paste UPDATED README.md** aligned with your **new setup**.
-
----
-
 # 🌊 Underwater Debris Detection using YOLOv8
 
 An **AI-powered web application** for detecting underwater debris using a **YOLOv8 deep learning model**, combined with a **modern frontend UI** and a **live Gradio demo hosted separately**.
