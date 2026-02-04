@@ -159,8 +159,9 @@ This enables **real-time prediction directly inside the website UI**.
 * Model detection results
 * Gradio live interface
 
-![alt text]({73BAE810-ECB6-41E5-9C99-9835F0E91C9D}.png)
-![alt text]({45B03402-0390-4D12-B2B7-78A9872182FC}.png)
+![Web UI](img/ui1.png)
+![Gradio Live Demo](img/ui2.png)
+
 ---
 
 ## 📜 License
